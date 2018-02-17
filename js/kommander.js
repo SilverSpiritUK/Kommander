@@ -27,7 +27,7 @@ for(var i=0; i<num; ++i)
   }
   div2.id = "star" + i;
   div2.style.position = "absolute";
-  div2.style.left = (div.clientWidth - 5) + "px";
+  div2.style.left = (div.clientLeft + 5) + Math.round(Math.random()*(div.clientWidth-10)) + "px";
   var top = (div.clientTop + 5) + Math.round(Math.random()*(div.clientHeight-10));
   div2.style.top = top + "px";
   div2.appendChild(image[i]);
@@ -54,7 +54,7 @@ var movefunc = function()
     leftnum -= star.speed;
     if(leftnum <= (div.clientLeft + 5))
     {
-      leftnum = div.clientWidth-10;
+      leftnum = div.clientWidth - 5;//(div.clientLeft + 5) + Math.round(Math.random()*(div.clientWidth-10));
       var top = (div.clientTop + 5) + Math.round(Math.random()*(div.clientHeight-10));
       star.style.top = top + "px";
       star.speed = (5 + Math.round(Math.random()*star.type));
