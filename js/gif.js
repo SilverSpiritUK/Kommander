@@ -9,7 +9,6 @@ function getGIFData(img)
     {
       if(!count) count = 0;
 
-      var img = this.parentElement;
       var ct = this[count].lctFlag ? this[count].lct : this.hdr.gct;
       var cData = ctx.createImageData(img.width, img.height);
 
